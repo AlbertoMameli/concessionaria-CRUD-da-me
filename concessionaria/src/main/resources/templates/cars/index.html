@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head :: head('Cars')}" />
+
+
+<body>
+    <main class="container">
+        <section class="title row">
+            <div class="col-12">
+                <h1 th:text="'Benvenuti alla Concessionaria Firindellius'" />
+
+                <p th:text="${cars}" />
+            </div>
+        </section>
+
+
+
+
+    </main>
+</body>
+
+</html>
