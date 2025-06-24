@@ -11,9 +11,35 @@
             <div class="col-12">
                 <h1 th:text="'Benvenuti alla Concessionaria Firindellius'" />
 
-                <p th:text="${cars}" />
+
             </div>
         </section>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Carrozeria</th>
+                    <th scope="col">Stato</th>
+                    <th scope="col">Km</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="car :${cars}" th:object="${car}">
+                    <td>[[*{id}]]</td>
+                    <td>[[*{name}]]</td>
+                    <td>[[*{carrozeria}]]</td>
+                    <td>[[*{statoVeicolo}]]</td>
+                    <td>[[*{km}]]</td>
+
+
+
+                </tr>
+
+            </tbody>
+        </table>
 
 
 
