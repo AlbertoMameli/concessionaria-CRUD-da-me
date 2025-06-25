@@ -6,40 +6,63 @@
 
 
 <body>
+    <header>
+        <nav th:replace="~{ fragments/navbar :: navbar}" />
+        </nav>
+    </header>
     <main class="container">
         <section class="title row">
-            <div class="col-12">
-                <h1 th:text="'Benvenuti alla Concessionaria Firindellius'" />
+            <div class="col-12 my-5">
+                <h1 class="d-flex justify-content-center">Auto in concessionaria</h1>
 
 
             </div>
         </section>
+        <div class="buttons mb-4 px-1 d-flex justify-content-between">
+            <a href="#" class="btn btn-lg btn-primary disabled">Inserisci nuova auto</a>
+            <div class="input-group w-25">
+                <input type="text" class="form-control" placeholder="Car to be Searched..." aria-label="Car to be Searched"
+                    aria-describedby="button-addon2">
+                <button class="btn btn-outline-primary" type="button-addon2">Search</button>
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Carrozeria</th>
-                    <th scope="col">Stato</th>
-                    <th scope="col">Km</th>
+            </div>
 
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="car :${cars}" th:object="${car}">
-                    <td>[[*{id}]]</td>
-                    <td>[[*{name}]]</td>
-                    <td>[[*{carrozeria}]]</td>
-                    <td>[[*{statoVeicolo}]]</td>
-                    <td>[[*{km}]]</td>
+        </div>
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Carrozeria</th>
+                        <th scope="col">Stato</th>
+                        <th scope="col">Km</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="car :${cars}" th:object="${car}" class="justify-content between">
+                        <td>[[*{id}]]</td>
+                        <td>[[*{name}]]</td>
+                        <td>[[*{carrozeria}]]</td>
+                        <td>[[*{statoVeicolo}]]</td>
+                        <td>[[*{km}]]</td>
+                        <td>
+                            <a th:href="@{/cars/{id}(id=${car.id})}" class="btn btn-sm btn-primary">Show</a>
+                            <a href="#" class="btn btn-sm disabled btn-success">Edit</a>
+                            <a href="#" class="btn btn-sm disabled btn-warning">Show</a>
+
+                        </td>
 
 
 
-                </tr>
 
-            </tbody>
-        </table>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
 
 
 

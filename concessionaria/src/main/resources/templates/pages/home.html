@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head th:replace="fragments/head :: head('Concessionaria Firindellius')"></head>
+
 <body>
+    <header>
+        <nav th:replace="~{ fragments/navbar :: navbar}" />
+        </nav>
+    </header>
     <main class="container">
         <section class="row">
             <div class="col-12">
                 <h1 class="text-center">
                     Concessionaria Firindellius
+
                 </h1>
+                    <div class="d-flex justify-content-center mt-3">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7p-0Lk8YM8fxum4VJYfwu9tnC3XGV6qrFhw&s"
+                            alt="Logo Concessionaria" class="img-fluid" style="max-height: 300px;">
+                    </div>
+                    <div class="text-center mt-3">
+                        <p><em>"La sinistra deve smetterla di dire che devo rimanere a casa, perché questo mi crea un gran disagio, <br>
+                            avendo venti case non saprei in quale andare."</em>
+                        <br></p>
+
+                   <span><small>Il mitico <em>"Silvio Berlusconi".</em></small></span> 
+                    </div>
+
             </div>
         </section>
     </main>
 </body>
+
 </html>
